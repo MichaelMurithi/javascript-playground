@@ -1,33 +1,25 @@
 "use strict";
 
-function increment(x) { return x + 1; }
-function decrement(x) { return x - 1; }
-function double(x) { return x * 2; }
-function half(x) { return x / 2; }
-// creates a composed function with various functions as arguments
-function compose(...fns) {
-	return pipe(...fns.reverse());
+function lotteryNum() {
+	return (Math.round(Math.random() * 100) % 58) + 1;
 }
-//returns a piped funtion with an array of functions as arguments.
-function pipe(...fns) {
-	return function piped(result) {
-		for (let fn of fns) {
-			result = fn(result);
-		}
-		return result;
-	};
+
+function pickNumber(num,nums) {
+	if (!nums.includes(num)) {
+		nums = [num,...nums];
+		nums.sort(function asc(a,b){ return a - b; });
+	}
+	return nums;
 }
-//declaring the composed functions
-var f1 = compose(increment,decrement);
-var f2 = pipe(decrement,increment);
-var f3 = compose(decrement,double,increment,half);
-var f4 = pipe(half,increment,double,decrement);
-var f5 = compose(increment);
-var f6 = pipe(increment);
-//test data
-console.log( f1(3) === 3 );
-console.log( f1(3) === f2(3) );
-console.log( f3(3) === 4 );
-console.log( f3(3) === f4(3) );
-console.log( f5(3) === 4 );
-console.log( f5(3) === f6(3) );
+
+var luckyLotteryNumbers = [];
+const howMany = 6;
+
+while (luckyLotteryNumbers.length < howMany) {
+	luckyLotteryNumbers = pickNumber(
+		lotteryNum(),
+		Object.freeze(luckyLotteryNumbers)
+	);
+}
+
+console.log(luckyLotteryNumbers);
