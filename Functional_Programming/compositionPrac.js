@@ -1,26 +1,33 @@
 "use strict";
-//this function returns a random lottery number
-function lotteryNum() {
-	return (Math.round(Math.random() * 100) % 58) + 1;
-}
-// picks a number and an array in which to push generated numbers and returns an array of eligible lucky numbers
-function pickNumber(num,nums) {
-	if (!nums.includes(num)) { //checks whether the generated numbers includes a repeated value
-		nums = [num,...nums]; //copys the array of numbers to make the original array immutable 
-		nums.sort(function asc(a,b){ return a - b; });
-		//sorts the eligible array of numbers into ascending order
-	}
-	return nums;
-}
 
-var luckyLotteryNumbers = [];
-const howMany = 6; //defines the number of lucky numbers to generate
-
-while (luckyLotteryNumbers.length < howMany) {
-	luckyLotteryNumbers = pickNumber(
-		lotteryNum(), //picks a lottery number by randomly by calling the function
-		Object.freeze(luckyLotteryNumbers) //passes in an immutable version of the luckyNumbers array
-	);
+function increment(x) { return x + 1; }
+function decrement(x) { return x - 1; }
+function double(x) { return x * 2; }
+function half(x) { return x / 2; }
+// creates a composed function with various functions as arguments
+function compose(...fns) {
+	return pipe(...fns.reverse());
 }
-
-console.log(luckyLotteryNumbers); //outputs the lottery number to the console.
+//returns a piped funtion with an array of functions as arguments.
+function pipe(...fns) {
+	return function piped(result) {
+		for (let fn of fns) {
+			result = fn(result);
+		}
+		return result;
+	};
+}
+//declaring the composed functions
+var f1 = compose(increment,decrement);
+var f2 = pipe(decrement,increment);
+var f3 = compose(decrement,double,increment,half);
+var f4 = pipe(half,increment,double,decrement);
+var f5 = compose(increment);
+var f6 = pipe(increment);
+//test data
+console.log( f1(3) === 3 );
+console.log( f1(3) === f2(3) );
+console.log( f3(3) === 4 );
+console.log( f3(3) === f4(3) );
+console.log( f5(3) === 4 );
+console.log( f5(3) === f6(3) );
