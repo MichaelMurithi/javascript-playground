@@ -1,13 +1,8 @@
 /**
- * Javascript is a dynamic language
- * You don't have too define the type of the variables when you define them
- * A primitive is simply a data type that doesn't have methods
- * They are: string, number, boolean, null, undefined, symbol
- * 
+ * objects contain key:value pairs of various properties
+ * Refference article: https://www.digitalocean.com/community/tutorials/copying-objects-in-javascript
+
 */
-//**__________Primitive data types__________ */
-//Strings used to represent text data
-let username = "Wekulo"
 
 const car = {
     wheels:4,
@@ -50,6 +45,7 @@ const cars = {
 }
 const key = 'ferrari' //user input
 console.log(cars[key]) //accesing the variable from a dynamic key stored in a variable
+
 
 //************* Copying objects **************/
 /** 
