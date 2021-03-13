@@ -8,7 +8,11 @@
  - If we want to manually set the value of this to something we can use .bind
  * The .call() method can also be used to set the value of the 'this' keyword. It accepts a list of arguments
  * The .apply() method can also be used in plac of bind, but accepts a single array of arguments
- 
+ * The major difference between .call() and .apply() comes into play when writing
+ a function that does'nt need to know the no. of arguments required.
+ in that case .call() requires to pass the arguments individually
+ - The solution is to use .apply() because you can just pass the array and it well get unpacked inside of the function 
+ no matter how many arguments it contains.
  */
 
 // In this case, 'this' refers to 'myUser' object
@@ -54,3 +58,12 @@ function MyCar(make,color){
 
 const myNewCar = new MyCar('BMW','grey')
 console.log(myNewCar.carMake)
+
+//Using .apply() method
+function myAppliedCar(make,color){
+    Car.apply(this,[make,color]);
+    this.dealer = "Safari dealers"
+    console.log(this)
+}
+
+const myCoolCar = new myAppliedCar('Prado','Dark blue')
