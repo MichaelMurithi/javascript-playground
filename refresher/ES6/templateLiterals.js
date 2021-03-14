@@ -1,5 +1,5 @@
 /**
- * 
+ * Template literals article: https://codeburst.io/javascript-es6-tagged-template-literals-a45c26e54761?gi=a96b41bbacfd
  */
 
 //String interpolation in es5
@@ -43,3 +43,25 @@ const text = `
 </div>
 `
 console.log(text)
+
+//Tagged template literals
+/**
+ * By tagging a function to a template literal, we can run the template literal through the function providing it with everything
+ * You take the name of your function and put it infront of the template you want to run against it
+ * 
+ */
+
+let person = "Alberto"
+let age = 25
+
+function myTag(strings,personName,personAge){
+    let str = strings[1];
+    let agestr;
+
+    personAge > 50 ? agestr = "grandpa" :agestr = "youngster"
+
+    return personName + str + agestr
+}
+
+let sentence = myTag`${person} is a ${age}`
+console.log(sentence)
