@@ -1,5 +1,9 @@
 /**
  * Destructuring involves creating variables from objects
+ * Destructuring can be used to swap variables
+ * The ...rest operator is used to collect values remained after destructuring
+ * With destructuring, default values can be provided in the resulting objects
+ 
  */
 
 // Old way of creating variables from objects
