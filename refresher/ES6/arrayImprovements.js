@@ -57,4 +57,3 @@ const eachIsEven = nums.every(e => e%2 == 0)//checks if every number is an even 
 console.log(eachIsEven)
 
 
-
