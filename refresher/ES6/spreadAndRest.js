@@ -49,7 +49,6 @@ let clone = {...person}
 console.log("The persons clone using spread operator is ",clone)
 
 //The rest parameter --condenses multiple elements into a single array
-
 const runners = ["Tom","Paul","Mark","Luke"]
 const [first, second,...loosers] = runners
 
