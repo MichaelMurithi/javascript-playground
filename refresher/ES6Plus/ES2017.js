@@ -6,8 +6,19 @@
 * Object.keys() -- returns an array containing all the keys
 * Object.getOwnPropertyDescriptors() -- It will return all the property descriptors of an object
 - The attributes it can return are: (value,writable,get,set,enumerable,configurable)
+* Now when writing objects, functions, we can leave commas at the end even if it is not the last one
+* Atomic operations make sure that:
+- Predictable values are written and read
+- That operations are completed before the next operation starts
+- That operations are not interrupted
+* Atomics is not a constructor:
+- All its properties and objects are shared
+- We can therefore not use it with a new operator or invoke the atomics object as a function
 
- */
+* Atomics methods:
+- add(), or(), xor()
+
+*/
 
 //Using padStart() to rightAlign test
 
@@ -38,3 +49,13 @@ console.log(Object.values(family)) //Returns values from the family object
 console.log(Object.entries(family)) //Returns a list of entries from the family object
 
 console.log(Object.getOwnPropertyDescriptors(family))
+
+//Trailing commas in functions
+const object ={
+    name:"My object",
+    type:"Cool Object",
+    display:function(){
+        console.log(`My object name is ${this.name} and it is of type ${this.type}`)
+    }
+}
+//Shared memory and atomics
