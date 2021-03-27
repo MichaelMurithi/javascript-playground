@@ -1,5 +1,5 @@
 class Example{
-    public house = null;
+    private house = null;
 
     run(){
         console.log("Hello")
