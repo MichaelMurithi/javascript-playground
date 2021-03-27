@@ -1,3 +1,5 @@
+var array1 = [1, 33, 23, 45, 65];
+var array2 = ['Kenya', 'China', 'Rusia'];
 var objectGenericsClass = /** @class */ (function () {
     function objectGenericsClass(value1, value2) {
         this.value1 = value1;
