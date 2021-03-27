@@ -19,3 +19,13 @@ class Tree{
 
 let tree1 = new Tree("Bigger branch", "Green leaf");
 tree1.moveLeaf();
+
+class Building{
+    windows:string;
+    escalators(){
+        console.log("The escalators is moving ")
+    }
+}
+
+const building = new Building
+building.escalators()

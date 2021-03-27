@@ -18,3 +18,13 @@ var Tree = /** @class */ (function () {
 }());
 var tree1 = new Tree("Bigger branch", "Green leaf");
 tree1.moveLeaf();
+var Building = /** @class */ (function () {
+    function Building() {
+    }
+    Building.prototype.escalators = function () {
+        console.log("The escalators is moving ");
+    };
+    return Building;
+}());
+var building = new Building;
+building.escalators();
