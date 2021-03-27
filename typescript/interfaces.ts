@@ -1,4 +1,5 @@
 //Interface implemented by automobile. Defines the properties of automobile
+
 interface AutomobileInterface{
     brand:string,
     speed:number,
@@ -36,6 +37,7 @@ class Automobile implements AutomobileInterface{
 
 const car1 = new Automobile()
 
+//extending interfaces
 interface AutomomobileInterface2 extends AutomobileInterface{
-    
+    brand: string;
 }

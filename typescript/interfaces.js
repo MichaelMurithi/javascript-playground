@@ -1,3 +1,4 @@
+//Interface implemented by automobile. Defines the properties of automobile
 var automobile = {
     brand: "BMW",
     speed: 200,
