@@ -1,11 +1,10 @@
-class Example{
-    private house = null;
+/**
+ * TYpescript helps us find errors in our code even in plane javascript.
+ */
 
-    run(){
-        console.log("Hello")
-    }
-
+function greet(person:string, date:Date){
+    console.log(`Hello ${person}. The date today is ${date}`)
 }
 
-const tsExample = new Example();
-tsExample.run();
+greet("Michael", new Date());
+

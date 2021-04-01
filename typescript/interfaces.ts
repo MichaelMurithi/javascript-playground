@@ -1,43 +1,21 @@
-//Interface implemented by automobile. Defines the properties of automobile
-
-interface AutomobileInterface{
-    brand:string,
-    speed:number,
-    speedMethod:() => void
+interface Employee{
+    firstName: string;
+    lastName:string;
+    position:string;
+    getDetails: () => string 
 }
 
-const automobile: AutomobileInterface ={
-    brand:"BMW",
-    speed:200,
-    speedMethod(){
-        console.log(`${this.brand} has a speed of ${this.speed}`)
-    }
+const manager: Employee = { //The manager in this case implements Employee interface
+    firstName:"Duncan",
+    lastName:"Wekulo",
+    position:"Manager",
+    getDetails:function(){
+        return this.position + " "+ this.firstName +" "+ this.lastName
+    } 
 }
 
-automobile.speedMethod()
-
-//Implementing interfaces in function
-function car(automobile:AutomobileInterface){
-    automobile.speed = 500 //Using a value that is not a number raises an error 
-    console.log(`${automobile.brand} has ${automobile.speed}`)
+function hire(person: Employee){
+    console.log(person.getDetails(), " has been hired")
 }
 
-car(automobile)
-
-
-//Implementing interfaces in classes
-class Automobile implements AutomobileInterface{
-    brand:string
-    speed:number
-
-    speedMethod(){
-        console.log(`Hi my car is going at ${this.speed}`)
-    }
-}
-
-const car1 = new Automobile()
-
-//extending interfaces
-interface AutomomobileInterface2 extends AutomobileInterface{
-    brand: string;
-}
+hire(manager) // Manager Duncan Wekulo has been hired
