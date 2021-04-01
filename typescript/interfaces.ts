@@ -19,3 +19,4 @@ function hire(person: Employee){
 }
 
 hire(manager) // Manager Duncan Wekulo has been hired
+
