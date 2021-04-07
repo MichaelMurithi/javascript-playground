@@ -1,6 +1,8 @@
 ### Welcome to this Javascript Playground
 
-As lifelong learners, we are always seaking to improve and grow with the Javascript ecosystem.
+As a lifelong learner, I am always seaking to improve and grow with the Javascript ecosystem.
+
+Learn with me by taking a tour of my learning journey through code snippets, summary notes in `Readme.md` files and links to courses I used to learn the concepts.
 
 ## Directory Tour
 > Each subdirectory contains code snippets I write while learning and taking a refresher of the various concepts
